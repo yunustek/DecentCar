@@ -15,19 +15,10 @@
 		F2BB5E55298554BE00352280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5E54298554BE00352280 /* Assets.xcassets */; };
 		F2BB5E58298554BE00352280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5E56298554BE00352280 /* LaunchScreen.storyboard */; };
 		F2BB5E63298554BF00352280 /* DecentCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E62298554BF00352280 /* DecentCarTests.swift */; };
-		F2BB5E6D298554BF00352280 /* DecentCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E6C298554BF00352280 /* DecentCarUITests.swift */; };
-		F2BB5E6F298554BF00352280 /* DecentCarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E6E298554BF00352280 /* DecentCarUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F2BB5E5F298554BF00352280 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2BB5E3D298554BC00352280 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2BB5E44298554BC00352280;
-			remoteInfo = DecentCar;
-		};
-		F2BB5E69298554BF00352280 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F2BB5E3D298554BC00352280 /* Project object */;
 			proxyType = 1;
@@ -48,9 +39,6 @@
 		F2BB5E59298554BE00352280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2BB5E5E298554BF00352280 /* DecentCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecentCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BB5E62298554BF00352280 /* DecentCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentCarTests.swift; sourceTree = "<group>"; };
-		F2BB5E68298554BF00352280 /* DecentCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecentCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2BB5E6C298554BF00352280 /* DecentCarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentCarUITests.swift; sourceTree = "<group>"; };
-		F2BB5E6E298554BF00352280 /* DecentCarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentCarUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,13 +56,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2BB5E65298554BF00352280 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,7 +64,6 @@
 			children = (
 				F2BB5E47298554BC00352280 /* DecentCar */,
 				F2BB5E61298554BF00352280 /* DecentCarTests */,
-				F2BB5E6B298554BF00352280 /* DecentCarUITests */,
 				F2BB5E46298554BC00352280 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,7 +73,6 @@
 			children = (
 				F2BB5E45298554BC00352280 /* DecentCar.app */,
 				F2BB5E5E298554BF00352280 /* DecentCarTests.xctest */,
-				F2BB5E68298554BF00352280 /* DecentCarUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,15 +98,6 @@
 				F2BB5E62298554BF00352280 /* DecentCarTests.swift */,
 			);
 			path = DecentCarTests;
-			sourceTree = "<group>";
-		};
-		F2BB5E6B298554BF00352280 /* DecentCarUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F2BB5E6C298554BF00352280 /* DecentCarUITests.swift */,
-				F2BB5E6E298554BF00352280 /* DecentCarUITestsLaunchTests.swift */,
-			);
-			path = DecentCarUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,24 +138,6 @@
 			productReference = F2BB5E5E298554BF00352280 /* DecentCarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F2BB5E67298554BF00352280 /* DecentCarUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2BB5E78298554BF00352280 /* Build configuration list for PBXNativeTarget "DecentCarUITests" */;
-			buildPhases = (
-				F2BB5E64298554BF00352280 /* Sources */,
-				F2BB5E65298554BF00352280 /* Frameworks */,
-				F2BB5E66298554BF00352280 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F2BB5E6A298554BF00352280 /* PBXTargetDependency */,
-			);
-			name = DecentCarUITests;
-			productName = DecentCarUITests;
-			productReference = F2BB5E68298554BF00352280 /* DecentCarUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +152,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					F2BB5E5D298554BF00352280 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = F2BB5E44298554BC00352280;
-					};
-					F2BB5E67298554BF00352280 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = F2BB5E44298554BC00352280;
 					};
@@ -224,7 +172,6 @@
 			targets = (
 				F2BB5E44298554BC00352280 /* DecentCar */,
 				F2BB5E5D298554BF00352280 /* DecentCarTests */,
-				F2BB5E67298554BF00352280 /* DecentCarUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,13 +188,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F2BB5E5C298554BF00352280 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2BB5E66298554BF00352280 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -276,15 +216,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2BB5E64298554BF00352280 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2BB5E6F298554BF00352280 /* DecentCarUITestsLaunchTests.swift in Sources */,
-				F2BB5E6D298554BF00352280 /* DecentCarUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -292,11 +223,6 @@
 			isa = PBXTargetDependency;
 			target = F2BB5E44298554BC00352280 /* DecentCar */;
 			targetProxy = F2BB5E5F298554BF00352280 /* PBXContainerItemProxy */;
-		};
-		F2BB5E6A298554BF00352280 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2BB5E44298554BC00352280 /* DecentCar */;
-			targetProxy = F2BB5E69298554BF00352280 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -530,42 +456,6 @@
 			};
 			name = Release;
 		};
-		F2BB5E79298554BF00352280 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R7N4XN9BQ5;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yunustek.DecentCarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DecentCar;
-			};
-			name = Debug;
-		};
-		F2BB5E7A298554BF00352280 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R7N4XN9BQ5;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yunustek.DecentCarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DecentCar;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,15 +482,6 @@
 			buildConfigurations = (
 				F2BB5E76298554BF00352280 /* Debug */,
 				F2BB5E77298554BF00352280 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2BB5E78298554BF00352280 /* Build configuration list for PBXNativeTarget "DecentCarUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2BB5E79298554BF00352280 /* Debug */,
-				F2BB5E7A298554BF00352280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
