@@ -19,5 +19,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>Confiigurations</key>
+	<dict>
+		<key>BASE_URL</key>
+		<string>$BASE_URL</string>
+	</dict>
 </dict>
 </plist>

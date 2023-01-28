@@ -13,6 +13,7 @@
 		F2BB5E55298554BE00352280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5E54298554BE00352280 /* Assets.xcassets */; };
 		F2BB5E58298554BE00352280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5E56298554BE00352280 /* LaunchScreen.storyboard */; };
 		F2BB5E63298554BF00352280 /* DecentCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E62298554BF00352280 /* DecentCarTests.swift */; };
+		F2BB5E8829855FB400352280 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E8729855FB400352280 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		F2BB5E59298554BE00352280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2BB5E5E298554BF00352280 /* DecentCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecentCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BB5E62298554BF00352280 /* DecentCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentCarTests.swift; sourceTree = "<group>"; };
+		F2BB5E8729855FB400352280 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +79,11 @@
 			isa = PBXGroup;
 			children = (
 				F2BB5E7B298556A900352280 /* Application */,
-				F2BB5E51298554BC00352280 /* DecentCar.xcdatamodeld */,
+				F2BB5E7D29855C0200352280 /* Cache Infrastructure */,
+				F2BB5E8029855D0700352280 /* Common */,
+				F2BB5E8129855D1000352280 /* Managers */,
+				F2BB5E7C29855BEA00352280 /* Network */,
+				F2BB5E7F29855C2300352280 /* Presentation */,
 			);
 			path = DecentCar;
 			sourceTree = "<group>";
@@ -100,6 +106,83 @@
 				F2BB5E56298554BE00352280 /* LaunchScreen.storyboard */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		F2BB5E7C29855BEA00352280 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5E8229855E7700352280 /* API Infrastructure */,
+				F2BB5E8329855EB800352280 /* Car API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F2BB5E7D29855C0200352280 /* Cache Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5E7E29855C0D00352280 /* CoreData */,
+			);
+			path = "Cache Infrastructure";
+			sourceTree = "<group>";
+		};
+		F2BB5E7E29855C0D00352280 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5E51298554BC00352280 /* DecentCar.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F2BB5E7F29855C2300352280 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F2BB5E8029855D0700352280 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5E8729855FB400352280 /* Configuration.swift */,
+				F2BB5E8629855F5A00352280 /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F2BB5E8129855D1000352280 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F2BB5E8229855E7700352280 /* API Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "API Infrastructure";
+			sourceTree = "<group>";
+		};
+		F2BB5E8329855EB800352280 /* Car API */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5E8429855F0900352280 /* Payload */,
+			);
+			name = "Car API";
+			sourceTree = "<group>";
+		};
+		F2BB5E8429855F0900352280 /* Payload */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Payload;
+			sourceTree = "<group>";
+		};
+		F2BB5E8629855F5A00352280 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +287,7 @@
 			files = (
 				F2BB5E49298554BC00352280 /* AppDelegate.swift in Sources */,
 				F2BB5E4B298554BC00352280 /* SceneDelegate.swift in Sources */,
+				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
 				F2BB5E53298554BC00352280 /* DecentCar.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://private-fe87c-simpleclassifieds.apiary-mock.com";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
@@ -384,6 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://private-fe87c-simpleclassifieds.apiary-mock.com";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
