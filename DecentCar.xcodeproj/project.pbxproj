@@ -14,6 +14,7 @@
 		F2BB5E58298554BE00352280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5E56298554BE00352280 /* LaunchScreen.storyboard */; };
 		F2BB5E63298554BF00352280 /* DecentCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E62298554BF00352280 /* DecentCarTests.swift */; };
 		F2BB5E8829855FB400352280 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E8729855FB400352280 /* Configuration.swift */; };
+		F2BB5E8A2985641E00352280 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E892985641E00352280 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		F2BB5E5E298554BF00352280 /* DecentCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecentCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BB5E62298554BF00352280 /* DecentCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentCarTests.swift; sourceTree = "<group>"; };
 		F2BB5E8729855FB400352280 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		F2BB5E892985641E00352280 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		F2BB5E8229855E7700352280 /* API Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F2BB5E892985641E00352280 /* URLSessionHTTPClient.swift */,
 			);
 			name = "API Infrastructure";
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BB5E8A2985641E00352280 /* URLSessionHTTPClient.swift in Sources */,
 				F2BB5E49298554BC00352280 /* AppDelegate.swift in Sources */,
 				F2BB5E4B298554BC00352280 /* SceneDelegate.swift in Sources */,
 				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
