@@ -15,7 +15,7 @@ enum NetworkError: Error {
 
 protocol CarService {
 
-    typealias Result = Swift.Result<Car, Error>
+    typealias Result = Swift.Result<CarResponse, Error>
 
     func getCars(url: URL, completion: @escaping (Result) -> Void)
 }
@@ -43,8 +43,8 @@ final class RemoteCarService: CarService {
 
     private static func map(_ data: Data, from response: HTTPURLResponse) -> Result {
         do {
-            let car = try CarMapper.map(data, from: response)
-            return .success(car)
+            let response = try CarMapper.map(data, from: response)
+            return .success(response)
         } catch {
             return .failure(error)
         }

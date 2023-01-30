@@ -9,10 +9,10 @@ import Foundation
 
 final class CarMapper {
 
-    static func map(_ data: Data, from response: HTTPURLResponse) throws -> Car {
+    static func map(_ data: Data, from response: HTTPURLResponse) throws -> CarResponse {
 
         guard response.statusCode == 200,
-                let result = try? JSONDecoder().decode(Car.self, from: data) else {
+                let result = try? JSONDecoder().decode(CarResponse.self, from: data) else {
             throw NetworkError.invalidData
         }
 

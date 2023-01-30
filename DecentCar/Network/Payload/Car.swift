@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias CarPayload = [Car]
+typealias CarResponse = [Car]
 
 enum Fuel: String, Decodable {
 
