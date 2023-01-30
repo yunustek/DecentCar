@@ -15,6 +15,13 @@
 		F2BB5E63298554BF00352280 /* DecentCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E62298554BF00352280 /* DecentCarTests.swift */; };
 		F2BB5E8829855FB400352280 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E8729855FB400352280 /* Configuration.swift */; };
 		F2BB5E8A2985641E00352280 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E892985641E00352280 /* URLSessionHTTPClient.swift */; };
+		F2BB5E972986BE6300352280 /* CarEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E962986BE6300352280 /* CarEndpoint.swift */; };
+		F2BB5E992986BF6600352280 /* CarMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E982986BF6600352280 /* CarMapper.swift */; };
+		F2BB5E9E2986C07E00352280 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E9B2986C07E00352280 /* Car.swift */; };
+		F2BB5E9F2986C07E00352280 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E9C2986C07E00352280 /* Image.swift */; };
+		F2BB5EA02986C07E00352280 /* Seller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E9D2986C07E00352280 /* Seller.swift */; };
+		F2BB5EA92986C24200352280 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EA82986C24200352280 /* CarService.swift */; };
+		F2BB5EAB2986C66800352280 /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EAA2986C66700352280 /* ImageDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +46,13 @@
 		F2BB5E62298554BF00352280 /* DecentCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentCarTests.swift; sourceTree = "<group>"; };
 		F2BB5E8729855FB400352280 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		F2BB5E892985641E00352280 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		F2BB5E962986BE6300352280 /* CarEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEndpoint.swift; sourceTree = "<group>"; };
+		F2BB5E982986BF6600352280 /* CarMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapper.swift; sourceTree = "<group>"; };
+		F2BB5E9B2986C07E00352280 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		F2BB5E9C2986C07E00352280 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		F2BB5E9D2986C07E00352280 /* Seller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seller.swift; sourceTree = "<group>"; };
+		F2BB5EA82986C24200352280 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
+		F2BB5EAA2986C66700352280 /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,16 +183,13 @@
 		F2BB5E8329855EB800352280 /* Car API */ = {
 			isa = PBXGroup;
 			children = (
-				F2BB5E8429855F0900352280 /* Payload */,
+				F2BB5E962986BE6300352280 /* CarEndpoint.swift */,
+				F2BB5E982986BF6600352280 /* CarMapper.swift */,
+				F2BB5EA82986C24200352280 /* CarService.swift */,
+				F2BB5EAA2986C66700352280 /* ImageDataService.swift */,
+				F2BB5E9A2986C07E00352280 /* Payload */,
 			);
 			name = "Car API";
-			sourceTree = "<group>";
-		};
-		F2BB5E8429855F0900352280 /* Payload */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Payload;
 			sourceTree = "<group>";
 		};
 		F2BB5E8629855F5A00352280 /* Extension */ = {
@@ -186,6 +197,16 @@
 			children = (
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F2BB5E9A2986C07E00352280 /* Payload */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5E9B2986C07E00352280 /* Car.swift */,
+				F2BB5E9C2986C07E00352280 /* Image.swift */,
+				F2BB5E9D2986C07E00352280 /* Seller.swift */,
+			);
+			path = Payload;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,9 +310,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2BB5E8A2985641E00352280 /* URLSessionHTTPClient.swift in Sources */,
+				F2BB5EA92986C24200352280 /* CarService.swift in Sources */,
+				F2BB5E9F2986C07E00352280 /* Image.swift in Sources */,
+				F2BB5E992986BF6600352280 /* CarMapper.swift in Sources */,
+				F2BB5E9E2986C07E00352280 /* Car.swift in Sources */,
 				F2BB5E49298554BC00352280 /* AppDelegate.swift in Sources */,
 				F2BB5E4B298554BC00352280 /* SceneDelegate.swift in Sources */,
+				F2BB5EAB2986C66800352280 /* ImageDataService.swift in Sources */,
+				F2BB5EA02986C07E00352280 /* Seller.swift in Sources */,
 				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
+				F2BB5E972986BE6300352280 /* CarEndpoint.swift in Sources */,
 				F2BB5E53298554BC00352280 /* DecentCar.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
