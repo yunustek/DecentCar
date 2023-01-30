@@ -12,7 +12,6 @@
 		F2BB5E53298554BC00352280 /* DecentCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E51298554BC00352280 /* DecentCar.xcdatamodeld */; };
 		F2BB5E55298554BE00352280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5E54298554BE00352280 /* Assets.xcassets */; };
 		F2BB5E58298554BE00352280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5E56298554BE00352280 /* LaunchScreen.storyboard */; };
-		F2BB5E63298554BF00352280 /* DecentCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E62298554BF00352280 /* DecentCarTests.swift */; };
 		F2BB5E8829855FB400352280 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E8729855FB400352280 /* Configuration.swift */; };
 		F2BB5E8A2985641E00352280 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E892985641E00352280 /* URLSessionHTTPClient.swift */; };
 		F2BB5E972986BE6300352280 /* CarEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E962986BE6300352280 /* CarEndpoint.swift */; };
@@ -22,6 +21,11 @@
 		F2BB5EA02986C07E00352280 /* Seller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E9D2986C07E00352280 /* Seller.swift */; };
 		F2BB5EA92986C24200352280 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EA82986C24200352280 /* CarService.swift */; };
 		F2BB5EAB2986C66800352280 /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EAA2986C66700352280 /* ImageDataService.swift */; };
+		F2BB5EAD2986C7E500352280 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EAC2986C7E500352280 /* HTTPClientTests.swift */; };
+		F2BB5EB02987D31B00352280 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EAF2987D31B00352280 /* URLProtocolStub.swift */; };
+		F2BB5EB22987D35D00352280 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB12987D35D00352280 /* TestHelpers.swift */; };
+		F2BB5EB42987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB32987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift */; };
+		F2BB5EB62987D5AD00352280 /* CarEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +47,6 @@
 		F2BB5E57298554BE00352280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2BB5E59298554BE00352280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2BB5E5E298554BF00352280 /* DecentCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecentCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2BB5E62298554BF00352280 /* DecentCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentCarTests.swift; sourceTree = "<group>"; };
 		F2BB5E8729855FB400352280 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		F2BB5E892985641E00352280 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		F2BB5E962986BE6300352280 /* CarEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEndpoint.swift; sourceTree = "<group>"; };
@@ -53,6 +56,11 @@
 		F2BB5E9D2986C07E00352280 /* Seller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seller.swift; sourceTree = "<group>"; };
 		F2BB5EA82986C24200352280 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
 		F2BB5EAA2986C66700352280 /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
+		F2BB5EAC2986C7E500352280 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
+		F2BB5EAF2987D31B00352280 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		F2BB5EB12987D35D00352280 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		F2BB5EB32987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEndpointTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +115,9 @@
 		F2BB5E61298554BF00352280 /* DecentCarTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2BB5E62298554BF00352280 /* DecentCarTests.swift */,
+				F2BB5EAE2987D2FE00352280 /* Helpers */,
+				F2BB5EAC2986C7E500352280 /* HTTPClientTests.swift */,
+				F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */,
 			);
 			path = DecentCarTests;
 			sourceTree = "<group>";
@@ -207,6 +217,16 @@
 				F2BB5E9D2986C07E00352280 /* Seller.swift */,
 			);
 			path = Payload;
+			sourceTree = "<group>";
+		};
+		F2BB5EAE2987D2FE00352280 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5EB12987D35D00352280 /* TestHelpers.swift */,
+				F2BB5EAF2987D31B00352280 /* URLProtocolStub.swift */,
+				F2BB5EB32987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +348,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2BB5E63298554BF00352280 /* DecentCarTests.swift in Sources */,
+				F2BB5EAD2986C7E500352280 /* HTTPClientTests.swift in Sources */,
+				F2BB5EB42987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				F2BB5EB62987D5AD00352280 /* CarEndpointTests.swift in Sources */,
+				F2BB5EB02987D31B00352280 /* URLProtocolStub.swift in Sources */,
+				F2BB5EB22987D35D00352280 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://private-fe87c-simpleclassifieds.apiary-mock.com";
+				BASE_URL = "https://private-fe87c-simpleclassifieds.apiary-mock.com";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
@@ -501,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://private-fe87c-simpleclassifieds.apiary-mock.com";
+				BASE_URL = "https://private-fe87c-simpleclassifieds.apiary-mock.com";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
@@ -533,7 +557,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yunustek.DecentCarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,7 +576,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yunustek.DecentCarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

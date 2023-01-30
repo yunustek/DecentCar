@@ -38,9 +38,9 @@ enum Configuration {
         }
     }
 
-    static var baseURL: String {
+    static var baseURL: URL {
 
         let content: String! = try! Configuration.value(for: "BASE_URL")
-        return content
+        return URL(string: content)!
     }
 }
