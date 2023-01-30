@@ -83,3 +83,21 @@ struct Car: Decodable {
     let seller: Seller?
     let colour: Color?
 }
+
+extension Car: Equatable {
+
+    static func == (lhs: Car, rhs: Car) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.make == rhs.make &&
+        lhs.model == rhs.model &&
+        lhs.price == rhs.price &&
+        lhs.firstRegistration == rhs.firstRegistration &&
+        lhs.mileage == rhs.mileage &&
+        lhs.fuel == rhs.fuel &&
+        lhs.images == rhs.images &&
+        lhs.description == rhs.description &&
+        lhs.modelline == rhs.modelline &&
+        lhs.seller == rhs.seller &&
+        lhs.colour == rhs.colour
+    }
+}

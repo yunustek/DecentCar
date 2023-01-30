@@ -26,6 +26,7 @@
 		F2BB5EB22987D35D00352280 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB12987D35D00352280 /* TestHelpers.swift */; };
 		F2BB5EB42987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB32987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift */; };
 		F2BB5EB62987D5AD00352280 /* CarEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */; };
+		F2BB5EB82987D99200352280 /* CarMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB72987D99200352280 /* CarMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F2BB5EB12987D35D00352280 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		F2BB5EB32987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEndpointTests.swift; sourceTree = "<group>"; };
+		F2BB5EB72987D99200352280 /* CarMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +117,10 @@
 		F2BB5E61298554BF00352280 /* DecentCarTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2BB5EAE2987D2FE00352280 /* Helpers */,
-				F2BB5EAC2986C7E500352280 /* HTTPClientTests.swift */,
 				F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */,
+				F2BB5EB72987D99200352280 /* CarMapperTests.swift */,
+				F2BB5EAC2986C7E500352280 /* HTTPClientTests.swift */,
+				F2BB5EAE2987D2FE00352280 /* Helpers */,
 			);
 			path = DecentCarTests;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2BB5EAD2986C7E500352280 /* HTTPClientTests.swift in Sources */,
+				F2BB5EB82987D99200352280 /* CarMapperTests.swift in Sources */,
 				F2BB5EB42987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				F2BB5EB62987D5AD00352280 /* CarEndpointTests.swift in Sources */,
 				F2BB5EB02987D31B00352280 /* URLProtocolStub.swift in Sources */,

@@ -10,3 +10,5 @@ import Foundation
 struct Image: Decodable {
     let url: String?
 }
+
+extension Image: Equatable {}

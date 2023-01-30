@@ -27,3 +27,5 @@ struct Seller: Decodable {
     let phone: String?
     let city: City?
 }
+
+extension Seller: Equatable {}
