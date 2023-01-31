@@ -58,15 +58,33 @@ final class CarTableViewCell: UITableViewCell {
             return
         }
 
-        ImageDownloadManager.shared.downloadImage(imageView: carImageView,
-                                                  url: url,
-                                                  placeholderImage: Constant.CarImageStatus.loading,
-                                                  failureImage: Constant.CarImageStatus.failed,
-                                                  priority: .normal,
-                                                  fadeDuration: 0.02,
-                                                  isPrepareForReuse: true,
-                                                  forceUpdate: forceUpdate) { result in
-            //
+        imageService.loadImageData(from: url) { [weak self] result in
+
+            guard let self = self else { return }
+
+            switch result {
+            case .success(let data):
+
+                operation.addOperation(url: url, imageService: imageService, imageData: data) { [weak self] result, url in
+
+                    DispatchQueue.main.async { [weak self] in
+
+                        guard let self = self else { return }
+
+                        switch result {
+                        case .success(let imageData):
+
+                            self.carImageView.image = UIImage(data: imageData)
+                        case .failure:
+
+                            self.carImageView.image = Constant.CarImageStatus.failed
+                        }
+                    }
+                }
+            case .failure:
+
+                self.carImageView.image = Constant.CarImageStatus.failed
+            }
         }
     }
 }
