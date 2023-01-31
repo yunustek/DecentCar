@@ -1,0 +1,180 @@
+//
+//  CarListViewController.swift
+//  DecentCar
+//
+//  Created by Yunus Tek on 31.01.2023.
+//
+
+import UIKit
+import Combine
+
+final class CarListViewController: UITableViewController, Alertable {
+
+    // MARK: Variables
+
+    private var viewModel: CarListViewModel!
+    private var cancellables: Set<AnyCancellable> = []
+
+    private let carReuseIdentifier = "CarTableViewCell"
+
+    // MARK: Initializations
+
+    convenience init(viewModel: CarListViewModel) {
+
+        self.init()
+        self.viewModel = viewModel
+    }
+
+    init() {
+        super.init(style: .plain)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+        applyStyling()
+        bind()
+    }
+
+    private func applyStyling() {
+
+        title = viewModel.title
+        setupNavigationController()
+        setupTableView()
+    }
+
+    private func setupNavigationController() {
+
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(openFilterPage))
+    }
+
+    private func setupTableView() {
+
+        refreshControl = UIRefreshControl()
+        if let refreshControl = refreshControl {
+            refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+            tableView.addSubview(refreshControl)
+        }
+
+        // FIXME: Yunus - Create BaseCellDataProtocol protocol
+        let nib = UINib(nibName: carReuseIdentifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: carReuseIdentifier)
+        tableView.alwaysBounceVertical = true
+    }
+
+    @objc func openFilterPage() {
+
+    }
+
+    @objc func refresh() {
+
+        viewModel.reloadCars()
+    }
+}
+
+// MARK: - Binding
+
+extension CarListViewController {
+
+    private func bind() {
+
+        bindLoader()
+        bindPhotos()
+        bindError()
+    }
+
+    private func bindError() {
+
+        viewModel.$error
+            .sink { [weak self] error in
+                guard let self = self else { return }
+                if let error = error {
+
+                    self.showConfirm("", bodyMessage: error)
+                }
+            }.store(in: &cancellables)
+    }
+
+    private func bindPhotos() {
+
+        viewModel.$cars
+            .sink { [weak self] photos in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }.store(in: &cancellables)
+    }
+
+    private func bindLoader() {
+
+        viewModel.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    if isLoading {
+                        self.refreshControl?.beginRefreshing()
+                    } else {
+                        self.refreshControl?.endRefreshing()
+                    }
+                }
+            }.store(in: &cancellables)
+    }
+}
+
+
+// MARK: - UITableview Configurations
+
+extension CarListViewController {
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.cars.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: carReuseIdentifier, for: indexPath) as! CarTableViewCell
+        cell.carImageView.image = nil
+
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        guard let cell = cell as? CarTableViewCell else { return }
+
+        cell.configure(with: viewModel.cars[indexPath.row],
+                       imageService: viewModel.imageService,
+                       operation: viewModel.photoOperation)
+    }
+
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let compareAction = UIContextualAction(style: .normal, title: "Compare") { (action, view, completion) in
+            // compara action
+            completion(true)
+        }
+
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [compareAction])
+        return swipeActionConfig
+    }
+
+}
+
+extension CarListViewController {
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.bounds.width
+    }
+}

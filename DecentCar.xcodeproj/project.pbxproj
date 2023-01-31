@@ -27,7 +27,13 @@
 		F2BB5EB42987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB32987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift */; };
 		F2BB5EB62987D5AD00352280 /* CarEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */; };
 		F2BB5EB82987D99200352280 /* CarMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EB72987D99200352280 /* CarMapperTests.swift */; };
+		F2BB5EBD2989283300352280 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EBC2989283300352280 /* CarListViewController.swift */; };
+		F2BB5EBF2989284200352280 /* CarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EBE2989284200352280 /* CarListViewModel.swift */; };
 		F2BB5EC2298928A200352280 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EC1298928A200352280 /* Alertable.swift */; };
+		F2BB5EC42989387200352280 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EC32989387200352280 /* Operations.swift */; };
+		F2BB5EC7298938C500352280 /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EC6298938C500352280 /* ImageDownloadOperation.swift */; };
+		F2BB5ECA298944DA00352280 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EC9298944DA00352280 /* CarTableViewCell.swift */; };
+		F2BB5ECC298944E800352280 /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5ECB298944E800352280 /* CarTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +70,13 @@
 		F2BB5EB32987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEndpointTests.swift; sourceTree = "<group>"; };
 		F2BB5EB72987D99200352280 /* CarMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapperTests.swift; sourceTree = "<group>"; };
+		F2BB5EBC2989283300352280 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		F2BB5EBE2989284200352280 /* CarListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
 		F2BB5EC1298928A200352280 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		F2BB5EC32989387200352280 /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		F2BB5EC6298938C500352280 /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
+		F2BB5EC9298944DA00352280 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		F2BB5ECB298944E800352280 /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +179,7 @@
 		F2BB5E7F29855C2300352280 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F2BB5EBB2989280F00352280 /* CarList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -176,6 +189,7 @@
 			children = (
 				F2BB5E8729855FB400352280 /* Configuration.swift */,
 				F2BB5E8629855F5A00352280 /* Extension */,
+				F2BB5EC5298938A800352280 /* Operation */,
 				F2BB5EC02989288700352280 /* Protocols */,
 			);
 			path = Common;
@@ -235,12 +249,40 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F2BB5EBB2989280F00352280 /* CarList */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5EBC2989283300352280 /* CarListViewController.swift */,
+				F2BB5EBE2989284200352280 /* CarListViewModel.swift */,
+				F2BB5EC82989443200352280 /* Views */,
+			);
+			path = CarList;
+			sourceTree = "<group>";
+		};
 		F2BB5EC02989288700352280 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				F2BB5EC1298928A200352280 /* Alertable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F2BB5EC5298938A800352280 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5EC6298938C500352280 /* ImageDownloadOperation.swift */,
+				F2BB5EC32989387200352280 /* Operations.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		F2BB5EC82989443200352280 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB5EC9298944DA00352280 /* CarTableViewCell.swift */,
+				F2BB5ECB298944E800352280 /* CarTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +368,7 @@
 			files = (
 				F2BB5E58298554BE00352280 /* LaunchScreen.storyboard in Resources */,
 				F2BB5E55298554BE00352280 /* Assets.xcassets in Resources */,
+				F2BB5ECC298944E800352280 /* CarTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,12 +393,17 @@
 				F2BB5E9E2986C07E00352280 /* Car.swift in Sources */,
 				F2BB5E49298554BC00352280 /* AppDelegate.swift in Sources */,
 				F2BB5E4B298554BC00352280 /* SceneDelegate.swift in Sources */,
+				F2BB5EBF2989284200352280 /* CarListViewModel.swift in Sources */,
 				F2BB5EAB2986C66800352280 /* ImageDataService.swift in Sources */,
 				F2BB5EC2298928A200352280 /* Alertable.swift in Sources */,
 				F2BB5EA02986C07E00352280 /* Seller.swift in Sources */,
 				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
+				F2BB5EC7298938C500352280 /* ImageDownloadOperation.swift in Sources */,
+				F2BB5ECA298944DA00352280 /* CarTableViewCell.swift in Sources */,
 				F2BB5E972986BE6300352280 /* CarEndpoint.swift in Sources */,
+				F2BB5EBD2989283300352280 /* CarListViewController.swift in Sources */,
 				F2BB5E53298554BC00352280 /* DecentCar.xcdatamodeld in Sources */,
+				F2BB5EC42989387200352280 /* Operations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
