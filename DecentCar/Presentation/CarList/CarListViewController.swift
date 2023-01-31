@@ -162,10 +162,10 @@ extension CarListViewController {
 
         guard let cell = cell as? CarTableViewCell else { return }
 
-        cell.configure(with: viewModel.cars[indexPath.row],
-                       imageService: viewModel.imageService,
-                       operation: viewModel.photoOperation,
-                       forceUpdate: false)
+        cell.bind(with: viewModel.cars[indexPath.row],
+                  imageService: viewModel.imageService,
+                  operation: viewModel.photoOperation,
+                  forceUpdateImage: false)
     }
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -183,9 +183,11 @@ extension CarListViewController {
 
         // LongPress Menu
         if #available(iOS 15.0, *) {
+
             let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
 
-                let compareAction = UIAction(title: "Compare", subtitle: self?.viewModel.cars[indexPath.row].description ?? "",
+                let compareAction = UIAction(title: "Compare",
+                                             subtitle: "Add to the compare list and find the best one for you.",
                                              image: nil,
                                              identifier: nil,
                                              discoverabilityTitle: nil,
@@ -194,7 +196,8 @@ extension CarListViewController {
                     print("Compare")
                 }
 
-                let title = self?.viewModel.cars[indexPath.row].make?.rawValue ?? ""
+                let car = self?.viewModel.cars[indexPath.row]
+                let title = "\(car?.description ?? "")"
 
                 return UIMenu(title: title, image: nil, identifier: nil, options: .displayInline, children: [compareAction])
             }

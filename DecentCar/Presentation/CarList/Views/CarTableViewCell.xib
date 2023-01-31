@@ -54,6 +54,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="carImageView" destination="8Fv-VH-pRC" id="xxi-xH-wxC"/>
+                <outlet property="containerView" destination="E2x-o9-G0b" id="Mzm-xJ-EbK"/>
             </connections>
             <point key="canvasLocation" x="267.93893129770993" y="111.9718309859155"/>
         </tableViewCell>
