@@ -11,7 +11,7 @@ import XCTest
 final class CarMapperTests: XCTestCase {
 
     func test_map_throwsErrorOnNon200HTTPResponse() throws {
-        let json = makeJson([:])
+        let json = makeJson([[:]])
         let samples = [199, 201, 300, 400, 500]
 
         try samples.forEach { code in
@@ -31,7 +31,7 @@ final class CarMapperTests: XCTestCase {
 
     func test_map_deliversCarsOn200HTTPResponseWithJSONItems() throws {
 
-        let json = makeJson([
+        let json = makeJson([[
             "id": 1,
             "make": "Audi",
             "model": "A8",
@@ -50,7 +50,7 @@ final class CarMapperTests: XCTestCase {
                 "city": "Rosenheim"
             ],
             "colour" : "Brown"
-        ])
+        ]])
 
         let result = try CarMapper.map(json, from: HTTPURLResponse(statusCode: 200))
 
@@ -69,7 +69,7 @@ final class CarMapperTests: XCTestCase {
                                      city: .rosenheim),
                       colour: .brown)
 
-        XCTAssertEqual(result, car)
+        XCTAssertEqual(result, [car])
     }
 }
 
@@ -77,8 +77,9 @@ final class CarMapperTests: XCTestCase {
 
 extension CarMapperTests {
 
-    private func makeJson(_ values: [String: Any]) -> Data {
+    private func makeJson(_ values: [[String: Any]]) -> Data {
         print(values)
         return try! JSONSerialization.data(withJSONObject: values)
     }
 }
+
