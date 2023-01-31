@@ -16,14 +16,13 @@ enum CarEndpoint {
         switch self {
         case .base:
 
+            let lastPath = "/"
             var components = URLComponents()
+
             components.scheme = baseURL.scheme
             components.host = baseURL.host
-            components.path = baseURL.path
-            components.queryItems = [
-                URLQueryItem(name: "format", value: "json"),
-                URLQueryItem(name: "nojsoncallback", value: "1")
-            ]
+            components.path = baseURL.path + lastPath
+            components.queryItems = []
             return components.url!
         }
     }
