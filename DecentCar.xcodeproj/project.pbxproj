@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77B43FBC5FDB9BA24959039B /* libPods-DecentCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA36A38637BA51DB3403CEF6 /* libPods-DecentCar.a */; };
+		B2738CB600E04E2DDF3BB898 /* libPods-DecentCarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC247253E320BF5ABA9951E /* libPods-DecentCarTests.a */; };
 		F2BB5E49298554BC00352280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E48298554BC00352280 /* AppDelegate.swift */; };
 		F2BB5E4B298554BC00352280 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E4A298554BC00352280 /* SceneDelegate.swift */; };
 		F2BB5E53298554BC00352280 /* DecentCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5E51298554BC00352280 /* DecentCar.xcdatamodeld */; };
@@ -47,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4505796E1AC1D2B57E2E73CB /* Pods-DecentCarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentCarTests.debug.xcconfig"; path = "Target Support Files/Pods-DecentCarTests/Pods-DecentCarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		578286539821B90D3152C7AD /* Pods-DecentCarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentCarTests.release.xcconfig"; path = "Target Support Files/Pods-DecentCarTests/Pods-DecentCarTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C2591A116D19AC3389A438B /* Pods-DecentCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentCar.debug.xcconfig"; path = "Target Support Files/Pods-DecentCar/Pods-DecentCar.debug.xcconfig"; sourceTree = "<group>"; };
+		A3D2BAB9B9C1385EB41FC033 /* Pods-DecentCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentCar.release.xcconfig"; path = "Target Support Files/Pods-DecentCar/Pods-DecentCar.release.xcconfig"; sourceTree = "<group>"; };
+		DBC247253E320BF5ABA9951E /* libPods-DecentCarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DecentCarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA36A38637BA51DB3403CEF6 /* libPods-DecentCar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DecentCar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BB5E45298554BC00352280 /* DecentCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecentCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BB5E48298554BC00352280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2BB5E4A298554BC00352280 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B43FBC5FDB9BA24959039B /* libPods-DecentCar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,18 +100,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2738CB600E04E2DDF3BB898 /* libPods-DecentCarTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47420641746C570A3C159883 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C2591A116D19AC3389A438B /* Pods-DecentCar.debug.xcconfig */,
+				A3D2BAB9B9C1385EB41FC033 /* Pods-DecentCar.release.xcconfig */,
+				4505796E1AC1D2B57E2E73CB /* Pods-DecentCarTests.debug.xcconfig */,
+				578286539821B90D3152C7AD /* Pods-DecentCarTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		988B6D23255B7B94C44E7ED3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA36A38637BA51DB3403CEF6 /* libPods-DecentCar.a */,
+				DBC247253E320BF5ABA9951E /* libPods-DecentCarTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2BB5E3C298554BC00352280 = {
 			isa = PBXGroup;
 			children = (
 				F2BB5E47298554BC00352280 /* DecentCar */,
 				F2BB5E61298554BF00352280 /* DecentCarTests */,
 				F2BB5E46298554BC00352280 /* Products */,
+				47420641746C570A3C159883 /* Pods */,
+				988B6D23255B7B94C44E7ED3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,6 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2BB5E72298554BF00352280 /* Build configuration list for PBXNativeTarget "DecentCar" */;
 			buildPhases = (
+				2477F60A68F1D4A854B22D06 /* [CP] Check Pods Manifest.lock */,
 				F2BB5E41298554BC00352280 /* Sources */,
 				F2BB5E42298554BC00352280 /* Frameworks */,
 				F2BB5E43298554BC00352280 /* Resources */,
@@ -309,6 +343,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2BB5E75298554BF00352280 /* Build configuration list for PBXNativeTarget "DecentCarTests" */;
 			buildPhases = (
+				232949B95AC52FC0423DF942 /* [CP] Check Pods Manifest.lock */,
 				F2BB5E5A298554BF00352280 /* Sources */,
 				F2BB5E5B298554BF00352280 /* Frameworks */,
 				F2BB5E5C298554BF00352280 /* Resources */,
@@ -380,6 +415,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		232949B95AC52FC0423DF942 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DecentCarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2477F60A68F1D4A854B22D06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DecentCar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F2BB5E41298554BC00352280 /* Sources */ = {
@@ -558,6 +640,7 @@
 		};
 		F2BB5E73298554BF00352280 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C2591A116D19AC3389A438B /* Pods-DecentCar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -586,6 +669,7 @@
 		};
 		F2BB5E74298554BF00352280 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3D2BAB9B9C1385EB41FC033 /* Pods-DecentCar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -614,6 +698,7 @@
 		};
 		F2BB5E76298554BF00352280 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4505796E1AC1D2B57E2E73CB /* Pods-DecentCarTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -633,6 +718,7 @@
 		};
 		F2BB5E77298554BF00352280 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 578286539821B90D3152C7AD /* Pods-DecentCarTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
