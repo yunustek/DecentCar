@@ -47,9 +47,17 @@ extension Alertable where Self: UIViewController {
         alert(titleMessage, bodyMessage: bodyMessage, okTitle: okTitle, ok: ok)
     }
 
+    /// Action Sheet with cancel action
+    /// - Parameters:
+    ///   - titleMessage: alert tile message
+    ///   - bodyMessage: alert body message
+    ///   - yesTitle: alert Yes button title
+    ///   - noTitle: alert No button title
+    ///   - yes: Yes button tap closue
+    ///   - no: No button tap closue
+    ///   - cancel: cancel button tap closue
     func showActionSheet(_ titleMessage: String? = nil,
                          bodyMessage: String? = nil,
-                         contentView: UIView? = nil,
                          yesTitle: String? = nil,
                          noTitle: String? = nil,
                          yes: (() -> Void)?,
@@ -101,7 +109,7 @@ extension Alertable where Self: UIViewController {
         presentToCurrenVC(optionMenu, animated: true)
     }
 
-    /// Yes/No button alert
+    /// Alert with Yes and No button
     private func alert(_ titleMessage: String?, bodyMessage: String?, yesTitle: String? = nil, noTitle: String? = nil, yes: (() -> Void)? = nil, no: (() -> Void)? = nil) {
 
         let alertController = UIAlertController(title: titleMessage, message: bodyMessage, preferredStyle: .alert)
@@ -117,7 +125,7 @@ extension Alertable where Self: UIViewController {
         presentToCurrenVC(alertController, animated: true)
     }
 
-    /// Ok button alert
+    /// Alert with Ok button
     private func alert(_ titleMessage: String, bodyMessage: String, okTitle: String? = nil, ok: (() -> Void)? = nil) {
 
         let alertController = UIAlertController(title: titleMessage, message: bodyMessage, preferredStyle: .alert)
