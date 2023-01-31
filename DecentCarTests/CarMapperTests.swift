@@ -78,8 +78,6 @@ final class CarMapperTests: XCTestCase {
 extension CarMapperTests {
 
     private func makeJson(_ values: [[String: Any]]) -> Data {
-        print(values)
         return try! JSONSerialization.data(withJSONObject: values)
     }
 }
-
