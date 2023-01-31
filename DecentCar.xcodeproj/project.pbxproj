@@ -38,6 +38,7 @@
 		F2BB5ECC298944E800352280 /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5ECB298944E800352280 /* CarTableViewCell.xib */; };
 		F2CED1F929899ED7008B8C3E /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED1F829899ED7008B8C3E /* Array+Extensions.swift */; };
 		F2CED1FE2989BFA3008B8C3E /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED1FD2989BFA3008B8C3E /* Decimal+Extensions.swift */; };
+		F2CED2032989D2C6008B8C3E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2022989D2C6008B8C3E /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		F2BB5ECB298944E800352280 /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
 		F2CED1F829899ED7008B8C3E /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		F2CED1FD2989BFA3008B8C3E /* Decimal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extensions.swift"; sourceTree = "<group>"; };
+		F2CED2022989D2C6008B8C3E /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		F2BB5E7F29855C2300352280 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F2CED2002989D2B1008B8C3E /* Reusable */,
 				F2BB5EBB2989280F00352280 /* CarList */,
 			);
 			path = Presentation;
@@ -313,6 +316,22 @@
 				F2BB5ECB298944E800352280 /* CarTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F2CED2002989D2B1008B8C3E /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				F2CED2012989D2B8008B8C3E /* Label */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		F2CED2012989D2B8008B8C3E /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				F2CED2022989D2C6008B8C3E /* PaddingLabel.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +499,7 @@
 				F2CED1F929899ED7008B8C3E /* Array+Extensions.swift in Sources */,
 				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
 				F2BB5EC7298938C500352280 /* ImageDownloadOperation.swift in Sources */,
+				F2CED2032989D2C6008B8C3E /* PaddingLabel.swift in Sources */,
 				F2BB5ECA298944DA00352280 /* CarTableViewCell.swift in Sources */,
 				F2BB5E972986BE6300352280 /* CarEndpoint.swift in Sources */,
 				F2BB5EBD2989283300352280 /* CarListViewController.swift in Sources */,
