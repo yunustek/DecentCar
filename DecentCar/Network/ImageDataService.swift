@@ -20,7 +20,8 @@ final class RemoteImageDataService: ImageDataService {
 
     private let client: HTTPClient
 
-    public init(client: HTTPClient) {
+    init(client: HTTPClient) {
+
         self.client = client
     }
 
