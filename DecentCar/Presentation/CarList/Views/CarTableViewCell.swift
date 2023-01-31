@@ -20,7 +20,7 @@ final class CarTableViewCell: UITableViewCell {
         }
     }
 
-    @IBOutlet weak var carImageView: UIImageView!
+    @IBOutlet private weak var carImageView: UIImageView!
 
     override func awakeFromNib() {
 
@@ -40,47 +40,33 @@ final class CarTableViewCell: UITableViewCell {
 
         super.prepareForReuse()
 
-        self.carImageView.image = Constant.CarImageStatus.empty
+        carImageView.image = Constant.CarImageStatus.empty
     }
 
-    func configure(with car: Car, imageService: ImageDataService, operation: Operations) {
+    func configure(with car: Car,
+                   imageService: ImageDataService,
+                   operation: Operations,
+                   forceUpdate: Bool) {
 
         carImageView.image = Constant.CarImageStatus.loading
 
-        guard let urlString = car.images?.first?.url,
+        guard let image = car.images?.first,
+              let urlString = image.url,
               let url = URL(string: urlString) else {
 
             carImageView.image = Constant.CarImageStatus.noImage
             return
         }
 
-        imageService.loadImageData(from: url) { [weak self] result in
-
-            guard let self = self else { return }
-
-            switch result {
-            case .success(let data):
-
-                operation.addOperation(url: url, imageService: imageService, imageData: data) { [weak self] result, url in
-
-                    DispatchQueue.main.async { [weak self] in
-
-                        guard let self = self else { return }
-
-                        switch result {
-                        case .success(let imageData):
-
-                            self.carImageView.image = UIImage(data: imageData)
-                        case .failure:
-
-                            self.carImageView.image = Constant.CarImageStatus.failed
-                        }
-                    }
-                }
-            case .failure:
-
-                self.carImageView.image = Constant.CarImageStatus.failed
-            }
+        ImageDownloadManager.shared.downloadImage(imageView: carImageView,
+                                                  url: url,
+                                                  placeholderImage: Constant.CarImageStatus.loading,
+                                                  failureImage: Constant.CarImageStatus.failed,
+                                                  priority: .normal,
+                                                  fadeDuration: 0.02,
+                                                  isPrepareForReuse: true,
+                                                  forceUpdate: forceUpdate) { result in
+            //
         }
     }
 }

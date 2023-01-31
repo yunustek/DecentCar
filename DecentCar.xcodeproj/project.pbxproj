@@ -36,6 +36,8 @@
 		F2BB5EC7298938C500352280 /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EC6298938C500352280 /* ImageDownloadOperation.swift */; };
 		F2BB5ECA298944DA00352280 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BB5EC9298944DA00352280 /* CarTableViewCell.swift */; };
 		F2BB5ECC298944E800352280 /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BB5ECB298944E800352280 /* CarTableViewCell.xib */; };
+		F2CED1F929899ED7008B8C3E /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED1F829899ED7008B8C3E /* ArrayExtensions.swift */; };
+		F2CED1FC2989BB21008B8C3E /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED1FB2989BB21008B8C3E /* ImageDownloadManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		F2BB5EC6298938C500352280 /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
 		F2BB5EC9298944DA00352280 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		F2BB5ECB298944E800352280 /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
+		F2CED1F829899ED7008B8C3E /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		F2CED1FB2989BB21008B8C3E /* ImageDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +119,6 @@
 				4505796E1AC1D2B57E2E73CB /* Pods-DecentCarTests.debug.xcconfig */,
 				578286539821B90D3152C7AD /* Pods-DecentCarTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,7 +157,7 @@
 				F2BB5E7B298556A900352280 /* Application */,
 				F2BB5E7D29855C0200352280 /* Cache Infrastructure */,
 				F2BB5E8029855D0700352280 /* Common */,
-				F2BB5E8129855D1000352280 /* Managers */,
+				F2CED1FA2989BB1A008B8C3E /* Managers */,
 				F2BB5E7C29855BEA00352280 /* Network */,
 				F2BB5E7F29855C2300352280 /* Presentation */,
 			);
@@ -228,13 +231,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		F2BB5E8129855D1000352280 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		F2BB5E8229855E7700352280 /* API Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +254,7 @@
 		F2BB5E8629855F5A00352280 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F2CED1F829899ED7008B8C3E /* ArrayExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,6 +313,14 @@
 				F2BB5ECB298944E800352280 /* CarTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F2CED1FA2989BB1A008B8C3E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F2CED1FB2989BB21008B8C3E /* ImageDownloadManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +476,7 @@
 				F2BB5E8A2985641E00352280 /* URLSessionHTTPClient.swift in Sources */,
 				F2BB5EA92986C24200352280 /* CarService.swift in Sources */,
 				F2BB5E9F2986C07E00352280 /* Image.swift in Sources */,
+				F2CED1FC2989BB21008B8C3E /* ImageDownloadManager.swift in Sources */,
 				F2BB5E992986BF6600352280 /* CarMapper.swift in Sources */,
 				F2BB5E9E2986C07E00352280 /* Car.swift in Sources */,
 				F2BB5E49298554BC00352280 /* AppDelegate.swift in Sources */,
@@ -479,6 +485,7 @@
 				F2BB5EAB2986C66800352280 /* ImageDataService.swift in Sources */,
 				F2BB5EC2298928A200352280 /* Alertable.swift in Sources */,
 				F2BB5EA02986C07E00352280 /* Seller.swift in Sources */,
+				F2CED1F929899ED7008B8C3E /* ArrayExtensions.swift in Sources */,
 				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
 				F2BB5EC7298938C500352280 /* ImageDownloadOperation.swift in Sources */,
 				F2BB5ECA298944DA00352280 /* CarTableViewCell.swift in Sources */,

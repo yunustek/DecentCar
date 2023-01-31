@@ -67,6 +67,7 @@ final class CarListViewController: UITableViewController, Alertable {
         let nib = UINib(nibName: carReuseIdentifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: carReuseIdentifier)
         tableView.alwaysBounceVertical = true
+        tableView.allowsSelection = false
     }
 
     @objc func openFilterPage() {
@@ -75,7 +76,7 @@ final class CarListViewController: UITableViewController, Alertable {
 
     @objc func refresh() {
 
-        viewModel.reloadCars()
+        viewModel.refreshCars()
     }
 }
 
@@ -105,9 +106,12 @@ extension CarListViewController {
     private func bindPhotos() {
 
         viewModel.$cars
-            .sink { [weak self] photos in
-                guard let self = self else { return }
-                DispatchQueue.main.async {
+            .sink { [weak self] _ in
+
+                DispatchQueue.main.async { [weak self] in
+
+                    guard let self = self else { return }
+
                     self.tableView.reloadData()
                 }
             }.store(in: &cancellables)
@@ -117,11 +121,16 @@ extension CarListViewController {
 
         viewModel.$isLoading
             .sink { [weak self] isLoading in
-                guard let self = self else { return }
-                DispatchQueue.main.async {
+
+                DispatchQueue.main.async { [weak self] in
+
+                    guard let self = self else { return }
+
                     if isLoading {
+
                         self.refreshControl?.beginRefreshing()
                     } else {
+
                         self.refreshControl?.endRefreshing()
                     }
                 }
@@ -145,7 +154,6 @@ extension CarListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: carReuseIdentifier, for: indexPath) as! CarTableViewCell
-        cell.carImageView.image = nil
 
         return cell
     }
@@ -156,7 +164,8 @@ extension CarListViewController {
 
         cell.configure(with: viewModel.cars[indexPath.row],
                        imageService: viewModel.imageService,
-                       operation: viewModel.photoOperation)
+                       operation: viewModel.photoOperation,
+                       forceUpdate: false)
     }
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -170,6 +179,31 @@ extension CarListViewController {
         return swipeActionConfig
     }
 
+    override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+
+        // LongPress Menu
+        if #available(iOS 15.0, *) {
+            let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
+
+                let compareAction = UIAction(title: "Compare", subtitle: self?.viewModel.cars[indexPath.row].description ?? "",
+                                             image: nil,
+                                             identifier: nil,
+                                             discoverabilityTitle: nil,
+                                             state: .off) { [weak self] _ in
+
+                    print("Compare")
+                }
+
+                let title = self?.viewModel.cars[indexPath.row].make?.rawValue ?? ""
+
+                return UIMenu(title: title, image: nil, identifier: nil, options: .displayInline, children: [compareAction])
+            }
+
+            return config
+        } else {
+            return nil
+        }
+    }
 }
 
 extension CarListViewController {

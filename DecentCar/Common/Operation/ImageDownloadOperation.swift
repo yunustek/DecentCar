@@ -30,8 +30,7 @@ class ImageDownloadOperation: Operation {
 
         guard !isCancelled else { return }
 
-        imageService
-            .loadImageData(from: url) { result in
+        imageService.loadImageData(from: url) { result in
 
                 DispatchQueue.main.async { [weak self] in
 

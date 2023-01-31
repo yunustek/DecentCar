@@ -17,8 +17,8 @@ final class CarEndpointTests: XCTestCase {
 
         XCTAssertEqual(received.scheme, "https", "scheme")
         XCTAssertEqual(received.host, "any-url.com", "host")
-        XCTAssertEqual(received.path, "", "path")
-        XCTAssertEqual(received.query, "format=json&nojsoncallback=1", "query")
+        XCTAssertEqual(received.path, "/", "path")
+        XCTAssertEqual(received.query, "", "query")
     }
 
     func test_car_endpointURL() throws {
@@ -28,7 +28,7 @@ final class CarEndpointTests: XCTestCase {
 
         XCTAssertEqual(received.scheme, "https", "scheme")
         XCTAssertEqual(received.host, "private-fe87c-simpleclassifieds.apiary-mock.com", "host")
-        XCTAssertEqual(received.path, "", "path")
-        XCTAssertEqual(received.query, "format=json&nojsoncallback=1", "query")
+        XCTAssertEqual(received.path, "/", "path")
+        XCTAssertEqual(received.query, "", "query")
     }
 }

@@ -31,21 +31,28 @@ final class RemoteCarService: CarService {
     }
 
     func getCars(url: URL, completion: @escaping (Result) -> Void) {
+
         client.getRequest(from: url) { result in
+
             switch result {
             case .success(let (data, response)):
+
                 completion(RemoteCarService.map(data, from: response))
             case .failure:
+
                 completion(.failure(NetworkError.connectivity))
             }
         }
     }
 
     private static func map(_ data: Data, from response: HTTPURLResponse) -> Result {
+
         do {
+
             let response = try CarMapper.map(data, from: response)
             return .success(response)
         } catch {
+            
             return .failure(error)
         }
     }

@@ -30,7 +30,7 @@ final class CarListViewModel {
         loadCars()
     }
 
-    func reloadCars() {
+    func refreshCars() {
 
         cars = []
         loadCars()
@@ -53,7 +53,7 @@ final class CarListViewModel {
             switch result {
             case let .success(cars):
 
-                self.cars.append(contentsOf: cars)
+                self.cars = cars
             case let .failure(error):
                 
                 self.error = error.localizedDescription
