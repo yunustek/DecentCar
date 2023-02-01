@@ -56,8 +56,7 @@ final class CompareViewController: UICollectionViewController, Alertable {
 
         collectionView.alwaysBounceVertical = false
         collectionView.alwaysBounceHorizontal = true
-        let nib = UINib(nibName: compareReuseIdentifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: compareReuseIdentifier)
+        collectionView.register(UINib(nibName: compareReuseIdentifier, bundle: nil), forCellWithReuseIdentifier: compareReuseIdentifier)
     }
 }
 
@@ -125,7 +124,10 @@ extension CompareViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: collectionView.bounds.width / numberOfColumns, height: collectionView.bounds.height / 2)
+        let insets = view.safeAreaInsets
+        let height = collectionView.bounds.height - insets.top - insets.bottom
+
+        return CGSize(width: (collectionView.bounds.width)/numberOfColumns, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
