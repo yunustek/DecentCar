@@ -26,8 +26,7 @@ https://www.figma.com/file/tT20TOl9pHjn9yTXujDngX/DecentCar-Wireframe?node-id=0%
 
 ## Screenshoots
 
-https://user-images.githubusercontent.com/9871990/216124025-1a98adb8-ec6b-447e-ab6b-ea2834eb1824.MP4
+https://user-images.githubusercontent.com/9871990/216135745-c34d695b-3768-4f24-80f7-379f3b738259.mov
 
-![image](https://user-images.githubusercontent.com/9871990/216124352-4027e4b3-cdec-4676-b780-9a4e3b69bec4.png)
-
-![IMG_2039](https://user-images.githubusercontent.com/9871990/216124169-2016c0f6-b181-46ba-8cd4-e86022c472bc.png)
+![Car_List_dark](https://user-images.githubusercontent.com/9871990/216136637-600913ae-8341-4354-9b2a-3c536f6341d3.jpeg)
+![Compare](https://user-images.githubusercontent.com/9871990/216136674-8e19d47c-adbe-411e-9946-cff4560b2e0f.png)
