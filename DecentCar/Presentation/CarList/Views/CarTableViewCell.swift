@@ -210,7 +210,7 @@ final class CarTableViewCell: UITableViewCell {
             return
         }
 
-        urlStrings.forEach { urlString in
+        urlStrings.enumerated().forEach { (index, urlString) in
 
             let carImageView = carImageView
             carImageView.image = Constant.CarImageStatus.loading
@@ -234,7 +234,10 @@ final class CarTableViewCell: UITableViewCell {
                 switch result {
                 case .success(let data):
 
-                    operation.addOperation(url: url, imageService: imageService, imageData: data) { result, url in
+                    operation.addOperation(url: url,
+                                           imageService: imageService,
+                                           imageData: data,
+                                           priority: index == 0 ? .veryHigh : .normal) { result, url in
 
                         DispatchQueue.main.async {
 

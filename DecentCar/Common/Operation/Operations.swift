@@ -13,16 +13,22 @@ class Operations {
 
     private var operationQueue = OperationQueue()
     private var dictionaryBlocks = [Data: (imageURL: URL, imageClosure: ImageClosure, operation: ImageDownloadOperation)]()
+    private var imageCache = [URL: Data]()
 
-    func addOperation(url: URL, imageService: ImageDataService, imageData: Data, completion: @escaping ImageClosure) {
+    func addOperation(url: URL, imageService: ImageDataService, imageData: Data, priority: Operation.QueuePriority, completion: @escaping ImageClosure) {
 
         guard !isOperationExists(with: url) else { return }
+
+        if let cachedData = imageCache[url] {
+            completion(.success(cachedData), url)
+            return
+        }
 
         if let tupple = dictionaryBlocks.removeValue(forKey: imageData) {
             tupple.operation.cancel()
         }
 
-        let newOperation = ImageDownloadOperation(url: url, imageService: imageService) { [weak self] data, downloadedImageURL in
+        let newOperation = ImageDownloadOperation(url: url, imageService: imageService, priority: priority) { [weak self] data, downloadedImageURL in
 
             guard let self = self,
                   let block = self.dictionaryBlocks[imageData],
@@ -30,6 +36,7 @@ class Operations {
 
             if let data = data {
 
+                self.imageCache[downloadedImageURL] = data
                 block.imageClosure(.success(data), downloadedImageURL)
 
                 if let removedBlock = self.dictionaryBlocks.removeValue(forKey: imageData) {

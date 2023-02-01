@@ -19,11 +19,16 @@ class ImageDownloadOperation: Operation {
 
     init(url: URL,
          imageService: ImageDataService,
+         priority: Operation.QueuePriority,
          completionBlock: @escaping (_ imageData : Data?, _ url: URL) -> Void) {
 
         self.url = url
         self.imageService = imageService
         self.customCompletionBlock = completionBlock
+
+        super.init()
+        
+        self.queuePriority = priority
     }
 
     override func main() {
