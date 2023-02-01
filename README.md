@@ -21,6 +21,10 @@ A car listing application that allows users to view a list of cars and their det
 * Xcode 14
 * CocoaPods 1.11.3
 
+## Figma project: 
+https://www.figma.com/file/tT20TOl9pHjn9yTXujDngX/DecentCar-Wireframe?node-id=0%3A1&t=Q4LCDedNlFHAPgAf-1
+
+## Screenshoots
 
 https://user-images.githubusercontent.com/9871990/216124025-1a98adb8-ec6b-447e-ab6b-ea2834eb1824.MP4
 
