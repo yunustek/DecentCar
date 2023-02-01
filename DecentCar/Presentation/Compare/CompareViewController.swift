@@ -117,6 +117,38 @@ extension CompareViewController {
 
         return cell
     }
+
+    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+
+        // LongPress Menu
+        guard #available(iOS 15.0, *) else { return nil }
+
+        let row = indexPaths.first!.row
+        let car = viewModel.compareCars[row]
+        let description = car.description ?? ""
+
+        let title = "Remove from compare"
+
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
+
+            let deleteAction = UIAction(title: title,
+                                        subtitle: "",
+                                        image: nil,
+                                        identifier: nil,
+                                        discoverabilityTitle: nil,
+                                        state: .mixed) { [weak self] _ in
+
+                self?.showQuestion("Remove from compare", bodyMessage: "Are you sure to Remove from compare?") {
+
+                    self?.viewModel.deleteCar(at: row)
+                } no: { }
+            }
+
+            return UIMenu(title: description, image: nil, identifier: nil, options: .displayInline, children: [deleteAction])
+        }
+
+        return config
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
