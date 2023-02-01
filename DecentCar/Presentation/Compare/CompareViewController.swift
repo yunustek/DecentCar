@@ -25,6 +25,7 @@ final class CompareViewController: UICollectionViewController, Alertable {
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.itemSize = .zero
         super.init(collectionViewLayout: layout)
     }
 
@@ -124,10 +125,11 @@ extension CompareViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+        let width = collectionView.bounds.width / numberOfColumns
         let insets = view.safeAreaInsets
-        let height = collectionView.bounds.height - insets.top - insets.bottom
+        let height = (collectionView.bounds.height - insets.top - insets.bottom)
 
-        return CGSize(width: (collectionView.bounds.width)/numberOfColumns, height: height)
+        return CGSize(width: width, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
