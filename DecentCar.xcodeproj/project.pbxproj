@@ -45,6 +45,8 @@
 		F2CED20F2989F041008B8C3E /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED20E2989F040008B8C3E /* FilterViewController.swift */; };
 		F2CED2112989F054008B8C3E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2102989F054008B8C3E /* FilterViewModel.swift */; };
 		F2CED2132989F0EE008B8C3E /* CarTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2122989F0EE008B8C3E /* CarTableViewModel.swift */; };
+		F2CED216298A855F008B8C3E /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED215298A855F008B8C3E /* CompareViewController.swift */; };
+		F2CED218298A856C008B8C3E /* CompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED217298A856C008B8C3E /* CompareViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		F2CED20E2989F040008B8C3E /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		F2CED2102989F054008B8C3E /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		F2CED2122989F0EE008B8C3E /* CarTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewModel.swift; sourceTree = "<group>"; };
+		F2CED215298A855F008B8C3E /* CompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewController.swift; sourceTree = "<group>"; };
+		F2CED217298A856C008B8C3E /* CompareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,7 @@
 		F2BB5E7F29855C2300352280 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F2CED214298A853B008B8C3E /* Compare */,
 				F2CED20D2989F024008B8C3E /* Filter */,
 				F2BB5EBB2989280F00352280 /* CarList */,
 			);
@@ -366,6 +371,15 @@
 				F2CED2102989F054008B8C3E /* FilterViewModel.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		F2CED214298A853B008B8C3E /* Compare */ = {
+			isa = PBXGroup;
+			children = (
+				F2CED215298A855F008B8C3E /* CompareViewController.swift */,
+				F2CED217298A856C008B8C3E /* CompareViewModel.swift */,
+			);
+			path = Compare;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,12 +548,14 @@
 				F2BB5EA02986C07E00352280 /* Seller.swift in Sources */,
 				F2CED1F929899ED7008B8C3E /* Array+Extensions.swift in Sources */,
 				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
+				F2CED216298A855F008B8C3E /* CompareViewController.swift in Sources */,
 				F2CED2112989F054008B8C3E /* FilterViewModel.swift in Sources */,
 				F2CED20A2989DD7F008B8C3E /* UIView+Extensions.swift in Sources */,
 				F2BB5EC7298938C500352280 /* ImageDownloadOperation.swift in Sources */,
 				F2CED2032989D2C6008B8C3E /* PaddingLabel.swift in Sources */,
 				F2CED20F2989F041008B8C3E /* FilterViewController.swift in Sources */,
 				F2BB5ECA298944DA00352280 /* CarTableViewCell.swift in Sources */,
+				F2CED218298A856C008B8C3E /* CompareViewModel.swift in Sources */,
 				F2BB5E972986BE6300352280 /* CarEndpoint.swift in Sources */,
 				F2BB5EBD2989283300352280 /* CarListViewController.swift in Sources */,
 				F2BB5E53298554BC00352280 /* DecentCar.xcdatamodeld in Sources */,

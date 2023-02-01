@@ -171,6 +171,18 @@ extension CarListViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let compareAction = UIContextualAction(style: .normal, title: "Compare") { (action, view, completion) in
+
+            // open compara screen
+            completion(true)
+        }
+
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [compareAction])
+        return swipeActionConfig
+    }
+
     override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
 
         // LongPress Menu
