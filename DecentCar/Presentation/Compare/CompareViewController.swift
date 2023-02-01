@@ -49,8 +49,7 @@ final class CompareViewController: UICollectionViewController, Alertable {
 
     private func setupNavigationController() {
 
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     private func setupCollectionView() {
