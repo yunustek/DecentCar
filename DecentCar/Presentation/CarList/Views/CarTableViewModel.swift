@@ -46,7 +46,9 @@ final class CarTableViewModel {
                           car.model?.rawValue,
                           car.modelline?.rawValue,
                           car.fuel?.rawValue,
-                          mileage]
+                          mileage,
+                          car.seller?.city?.rawValue,
+                          "Seller: \(car.seller?.type?.rawValue ?? "-")"]
             .compactMap { $0 }
             .map { "· \($0)" }
 

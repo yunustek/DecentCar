@@ -91,7 +91,7 @@ final class CarTableViewCell: UITableViewCell {
         priceLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
 
         descriptionLabel.numberOfLines = 2
-        propertiesLabel.numberOfLines = 1
+        propertiesLabel.numberOfLines = 2
 
         infoBackgroundView.backgroundColor = .black.withAlphaComponent(0.6)
         priceLabel.backgroundColor = .black.withAlphaComponent(0.8)

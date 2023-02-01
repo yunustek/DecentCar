@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import CallKit
 
 final class CarListViewController: UITableViewController, Alertable {
 
@@ -170,38 +171,41 @@ extension CarListViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
-        let compareAction = UIContextualAction(style: .normal, title: "Compare") { (action, view, completion) in
-            // compara action
-            completion(true)
-        }
-
-        let swipeActionConfig = UISwipeActionsConfiguration(actions: [compareAction])
-        return swipeActionConfig
-    }
-
     override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
 
         // LongPress Menu
         if #available(iOS 15.0, *) {
 
-            let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
+            let car = viewModel.cars[indexPath.row]
 
-                let compareAction = UIAction(title: "Compare",
-                                             subtitle: "Add to the compare list and find the best one for you.",
+            var title: String = "-"
+            var subtitle: String = "No Seller Info"
+
+            if let seller = car.seller,
+               let phone = seller.phone,
+               !phone.isEmpty {
+
+                subtitle = "Call Seller"
+                title = phone
+            }
+
+            let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+
+                let callSellerAction = UIAction(title: title,
+                                             subtitle: subtitle,
                                              image: nil,
                                              identifier: nil,
                                              discoverabilityTitle: nil,
-                                             state: .off) { [weak self] _ in
+                                             state: .off) { _ in
 
-                    print("Compare")
+                    guard let phone = car.seller?.phone,
+                          let number = URL(string: "tel://" + phone) else { return }
+                    UIApplication.shared.open(number)
                 }
 
-                let car = self?.viewModel.cars[indexPath.row]
-                let title = "\(car?.description ?? "")"
+                let title = "\(car.description ?? "")\nCity: \(car.seller?.city?.rawValue ?? "")"
 
-                return UIMenu(title: title, image: nil, identifier: nil, options: .displayInline, children: [compareAction])
+                return UIMenu(title: title, image: nil, identifier: nil, options: .displayInline, children: [callSellerAction])
             }
 
             return config
