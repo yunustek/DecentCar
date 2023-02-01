@@ -11,14 +11,18 @@ import CoreData
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let navigationController = UINavigationController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
+        configureWindow()
+    }
 
-        let navigationController = UINavigationController()
+    func configureWindow() {
+
         let vc = createRootViewController()
         navigationController.setViewControllers([vc], animated: false)
         window?.rootViewController = navigationController

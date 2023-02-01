@@ -47,6 +47,8 @@
 		F2CED2132989F0EE008B8C3E /* CarTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2122989F0EE008B8C3E /* CarTableViewModel.swift */; };
 		F2CED216298A855F008B8C3E /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED215298A855F008B8C3E /* CompareViewController.swift */; };
 		F2CED218298A856C008B8C3E /* CompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED217298A856C008B8C3E /* CompareViewModel.swift */; };
+		F2CED21C298A8902008B8C3E /* ScreenDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED21B298A8902008B8C3E /* ScreenDelegateTests.swift */; };
+		F2CED21E298A8A12008B8C3E /* CarListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED21D298A8A12008B8C3E /* CarListViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		F2CED2122989F0EE008B8C3E /* CarTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewModel.swift; sourceTree = "<group>"; };
 		F2CED215298A855F008B8C3E /* CompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewController.swift; sourceTree = "<group>"; };
 		F2CED217298A856C008B8C3E /* CompareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewModel.swift; sourceTree = "<group>"; };
+		F2CED21B298A8902008B8C3E /* ScreenDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDelegateTests.swift; sourceTree = "<group>"; };
+		F2CED21D298A8A12008B8C3E /* CarListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,8 @@
 			children = (
 				F2BB5EB52987D5AD00352280 /* CarEndpointTests.swift */,
 				F2BB5EB72987D99200352280 /* CarMapperTests.swift */,
+				F2CED21B298A8902008B8C3E /* ScreenDelegateTests.swift */,
+				F2CED21D298A8A12008B8C3E /* CarListViewControllerTests.swift */,
 				F2BB5EAC2986C7E500352280 /* HTTPClientTests.swift */,
 				F2BB5EAE2987D2FE00352280 /* Helpers */,
 			);
@@ -571,8 +577,10 @@
 				F2BB5EAD2986C7E500352280 /* HTTPClientTests.swift in Sources */,
 				F2BB5EB82987D99200352280 /* CarMapperTests.swift in Sources */,
 				F2BB5EB42987D37C00352280 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				F2CED21C298A8902008B8C3E /* ScreenDelegateTests.swift in Sources */,
 				F2BB5EB62987D5AD00352280 /* CarEndpointTests.swift in Sources */,
 				F2BB5EB02987D31B00352280 /* URLProtocolStub.swift in Sources */,
+				F2CED21E298A8A12008B8C3E /* CarListViewControllerTests.swift in Sources */,
 				F2BB5EB22987D35D00352280 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
