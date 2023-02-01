@@ -42,6 +42,9 @@
 		F2CED2062989DD49008B8C3E /* ScrollingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2052989DD49008B8C3E /* ScrollingPageControl.swift */; };
 		F2CED2082989DD53008B8C3E /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2072989DD53008B8C3E /* CircularView.swift */; };
 		F2CED20A2989DD7F008B8C3E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2092989DD7F008B8C3E /* UIView+Extensions.swift */; };
+		F2CED20F2989F041008B8C3E /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED20E2989F040008B8C3E /* FilterViewController.swift */; };
+		F2CED2112989F054008B8C3E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2102989F054008B8C3E /* FilterViewModel.swift */; };
+		F2CED2132989F0EE008B8C3E /* CarTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2122989F0EE008B8C3E /* CarTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		F2CED2052989DD49008B8C3E /* ScrollingPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingPageControl.swift; sourceTree = "<group>"; };
 		F2CED2072989DD53008B8C3E /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		F2CED2092989DD7F008B8C3E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F2CED20E2989F040008B8C3E /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		F2CED2102989F054008B8C3E /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		F2CED2122989F0EE008B8C3E /* CarTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,7 @@
 				F2BB5E8029855D0700352280 /* Common */,
 				F2BB5E7C29855BEA00352280 /* Network */,
 				F2BB5E7F29855C2300352280 /* Presentation */,
+				F2CED2002989D2B1008B8C3E /* Reusable */,
 			);
 			path = DecentCar;
 			sourceTree = "<group>";
@@ -222,7 +229,7 @@
 		F2BB5E7F29855C2300352280 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F2CED2002989D2B1008B8C3E /* Reusable */,
+				F2CED20D2989F024008B8C3E /* Filter */,
 				F2BB5EBB2989280F00352280 /* CarList */,
 			);
 			path = Presentation;
@@ -320,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				F2BB5EC9298944DA00352280 /* CarTableViewCell.swift */,
+				F2CED2122989F0EE008B8C3E /* CarTableViewModel.swift */,
 				F2BB5ECB298944E800352280 /* CarTableViewCell.xib */,
 			);
 			path = Views;
@@ -349,6 +357,15 @@
 				F2CED2072989DD53008B8C3E /* CircularView.swift */,
 			);
 			path = ScrollingPageControlView;
+			sourceTree = "<group>";
+		};
+		F2CED20D2989F024008B8C3E /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				F2CED20E2989F040008B8C3E /* FilterViewController.swift */,
+				F2CED2102989F054008B8C3E /* FilterViewModel.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,14 +534,17 @@
 				F2BB5EA02986C07E00352280 /* Seller.swift in Sources */,
 				F2CED1F929899ED7008B8C3E /* Array+Extensions.swift in Sources */,
 				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
+				F2CED2112989F054008B8C3E /* FilterViewModel.swift in Sources */,
 				F2CED20A2989DD7F008B8C3E /* UIView+Extensions.swift in Sources */,
 				F2BB5EC7298938C500352280 /* ImageDownloadOperation.swift in Sources */,
 				F2CED2032989D2C6008B8C3E /* PaddingLabel.swift in Sources */,
+				F2CED20F2989F041008B8C3E /* FilterViewController.swift in Sources */,
 				F2BB5ECA298944DA00352280 /* CarTableViewCell.swift in Sources */,
 				F2BB5E972986BE6300352280 /* CarEndpoint.swift in Sources */,
 				F2BB5EBD2989283300352280 /* CarListViewController.swift in Sources */,
 				F2BB5E53298554BC00352280 /* DecentCar.xcdatamodeld in Sources */,
 				F2BB5EC42989387200352280 /* Operations.swift in Sources */,
+				F2CED2132989F0EE008B8C3E /* CarTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

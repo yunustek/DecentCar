@@ -32,10 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let imageService = RemoteImageDataService(client: client)
 
         let carOperation = Operations()
-        let viewModel = CarListViewModel(
-            remoteService: remoteService,
-            imageService: imageService,
-            photoOperation: carOperation)
+        let viewModel = CarListViewModel(remoteService: remoteService,
+                                         imageService: imageService,
+                                         carOperation: carOperation)
+        
         let vc = CarListViewController(viewModel: viewModel)
         return vc
     }

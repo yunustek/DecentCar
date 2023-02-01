@@ -35,6 +35,8 @@ final class CarTableViewCell: UITableViewCell {
 
     // MARK: Variables
 
+    var viewModel: CarTableViewModel!
+
     private lazy var infoBackgroundView = UIView()
     private lazy var infoStackView = UIStackView()
     private lazy var descriptionLabel = UILabel()
@@ -103,38 +105,23 @@ final class CarTableViewCell: UITableViewCell {
         infoStackView.addArrangedSubview(propertiesLabel)
     }
 
-    func bind(with car: Car,
-              imageService: ImageDataService,
-              operation: Operations,
-              forceUpdateImage: Bool) {
+    func bind(model: CarTableViewModel) {
 
-        var mileage = "-"
-        if let m = car.mileage {
+        self.viewModel = model
 
-            mileage = "\(Decimal(m).exactDecimal ?? "-") km"
-        }
+        descriptionLabel.text = model.description
+        propertiesLabel.text = model.propertiesString
+        priceLabel.text = model.price
 
-        let properties = [car.make?.rawValue,
-                          car.model?.rawValue,
-                          car.modelline?.rawValue,
-                          car.fuel?.rawValue,
-                          mileage]
-            .compactMap { $0 }
-            .map { "· \($0)" }
-
-        let propertiesString = properties.joined(separator: " ")
-        let description = car.description ?? ""
-
-        descriptionLabel.text = description
-        propertiesLabel.text = propertiesString
-        priceLabel.text = Decimal(car.price ?? 0).exactCurrency ?? "-"
-
-        configureScrollView(pageCount: car.images?.count ?? 0)
+        configureScrollView(pageCount: model.imageCount)
 
         configureLayout()
 
         // Load Car Images
-        loadCarImage(urlStrings: car.images?.map({ $0.url }), imageService: imageService, operation: operation, forceUpdate: forceUpdateImage)
+        loadCarImage(urlStrings: model.imageUrls,
+                     imageService: model.imageService,
+                     operation: model.carOperation,
+                     forceUpdate: model.forceUpdateImage)
     }
 
     private func configureLayout() {

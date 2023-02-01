@@ -10,6 +10,11 @@ import Combine
 
 final class CarListViewController: UITableViewController, Alertable {
 
+    private enum Constant {
+
+        static let forceUpdateImage = true
+    }
+
     // MARK: Variables
 
     private var viewModel: CarListViewModel!
@@ -155,17 +160,14 @@ extension CarListViewController {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: carReuseIdentifier, for: indexPath) as! CarTableViewCell
 
+        let viewModel = CarTableViewModel(imageService: viewModel.imageService,
+                                           carOperation: viewModel.carOperation,
+                                           forceUpdateImage: Constant.forceUpdateImage,
+                                           car: viewModel.cars[indexPath.row])
+
+        cell.bind(model: viewModel)
+
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
-        guard let cell = cell as? CarTableViewCell else { return }
-
-        cell.bind(with: viewModel.cars[indexPath.row],
-                  imageService: viewModel.imageService,
-                  operation: viewModel.photoOperation,
-                  forceUpdateImage: false)
     }
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

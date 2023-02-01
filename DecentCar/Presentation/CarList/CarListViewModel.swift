@@ -12,7 +12,7 @@ final class CarListViewModel {
 
     var remoteService: CarService
     var imageService: ImageDataService
-    var photoOperation: Operations
+    var carOperation: Operations
 
     let title = "Decent Car"
     @Published var cars: CarResponse = []
@@ -21,11 +21,11 @@ final class CarListViewModel {
 
     init(remoteService: CarService,
          imageService: ImageDataService,
-         photoOperation: Operations) {
+         carOperation: Operations) {
 
         self.remoteService = remoteService
         self.imageService = imageService
-        self.photoOperation = photoOperation
+        self.carOperation = carOperation
 
         loadCars()
     }
