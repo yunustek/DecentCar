@@ -173,9 +173,22 @@ extension CarListViewController {
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-        let compareAction = UIContextualAction(style: .normal, title: "Compare") { (action, view, completion) in
+        let compareAction = UIContextualAction(style: .normal, title: "Compare") { [weak self] (action, view, completion) in
+
+            guard let self = self else {
+
+                completion(false)
+                return
+            }
 
             // open compara screen
+            let viewModel = CompareViewModel(imageService: self.viewModel.imageService,
+                                             carOperation: self.viewModel.carOperation,
+                                             service: self.viewModel.compareCarService,
+                                             cars: self.viewModel.cars,
+                                             insertCarId: self.viewModel.cars[indexPath.row].id)
+            let viewController = CompareViewController(viewModel: viewModel)
+            self.show(viewController, sender: self)
             completion(true)
         }
 
@@ -212,7 +225,11 @@ extension CarListViewController {
 
                     guard let phone = car.seller?.phone,
                           let number = URL(string: "tel://" + phone) else { return }
-                    UIApplication.shared.open(number)
+
+                    self.showQuestion("Call Seller", bodyMessage: "Are you sure to call seller phone?") {
+
+                        UIApplication.shared.open(number)
+                    } no: { }
                 }
 
                 let title = "\(car.description ?? "")\nCity: \(car.seller?.city?.rawValue ?? "")"

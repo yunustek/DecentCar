@@ -34,10 +34,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let client = URLSessionHTTPClient(session: .shared)
         let remoteService = RemoteCarService(client: client)
         let imageService = RemoteImageDataService(client: client)
-
         let carOperation = Operations()
+
+        let localStoreURL = NSPersistentContainer
+            .defaultDirectoryURL()
+            .appendingPathComponent("decent-car.sqlite")
+        let localStore = try! CoreDataCompareCarStore(storeURL: localStoreURL)
+        let compareCarService = CompareCarService(store: localStore)
+
         let viewModel = CarListViewModel(remoteService: remoteService,
                                          imageService: imageService,
+                                         compareCarService: compareCarService,
                                          carOperation: carOperation)
         
         let vc = CarListViewController(viewModel: viewModel)

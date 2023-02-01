@@ -12,13 +12,14 @@ final class CarTableViewModel {
     var imageService: ImageDataService
     var carOperation: Operations
     var forceUpdateImage: Bool
-    var car: Car
 
     var propertiesString: String = ""
     var description: String = ""
     var price: String = ""
     var imageCount: Int = 0
     var imageUrls: [String?]? = []
+
+    private var car: Car
 
     init(imageService: ImageDataService,
          carOperation: Operations,

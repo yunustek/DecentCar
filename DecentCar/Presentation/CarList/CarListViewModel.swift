@@ -12,6 +12,7 @@ final class CarListViewModel {
 
     var remoteService: CarService
     var imageService: ImageDataService
+    var compareCarService: CompareCarService
     var carOperation: Operations
 
     let title = "Decent Car"
@@ -21,10 +22,12 @@ final class CarListViewModel {
 
     init(remoteService: CarService,
          imageService: ImageDataService,
+         compareCarService: CompareCarService,
          carOperation: Operations) {
 
         self.remoteService = remoteService
         self.imageService = imageService
+        self.compareCarService = compareCarService
         self.carOperation = carOperation
 
         loadCars()
@@ -46,18 +49,18 @@ final class CarListViewModel {
         remoteService
             .getCars(url: endpoint) { [weak self] result in
 
-            guard let self = self else { return }
+                guard let self = self else { return }
 
-            self.isLoading = false
+                self.isLoading = false
 
-            switch result {
-            case let .success(cars):
+                switch result {
+                case let .success(cars):
 
-                self.cars = cars
-            case let .failure(error):
-                
-                self.error = error.localizedDescription
+                    self.cars = cars
+                case let .failure(error):
+
+                    self.error = error.localizedDescription
+                }
             }
-        }
     }
 }

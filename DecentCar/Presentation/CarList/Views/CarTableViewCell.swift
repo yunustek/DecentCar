@@ -14,19 +14,6 @@ final class CarTableViewCell: UITableViewCell {
 
         static let priceLabelPadding: CGFloat = 4
         static let firstLabelTextColor: UIColor = .white
-
-        enum CarImageStatus {
-
-            static let empty: UIImage? = nil
-            static let failed: UIImage? = UIImage(systemName: "wifi.slash")
-            static let noImage: UIImage? = UIImage(systemName: "car.fill")
-            static let loading: UIImage? = UIImage(systemName: "arrow.clockwise")
-        }
-
-        enum Tag {
-
-            static let carImageView = 1010
-        }
     }
 
     // MARK: Outlets
@@ -193,14 +180,14 @@ final class CarTableViewCell: UITableViewCell {
 
         guard let urlStrings = urlStrings else {
 
-            if let carImageView = containerView.subviews.first(where: { $0.tag == Constant.Tag.carImageView }) as? UIImageView {
+            if let carImageView = containerView.subviews.first(where: { $0.tag == CarImageConstant.tag }) as? UIImageView {
 
-                carImageView.image = Constant.CarImageStatus.noImage
+                carImageView.image = CarImageConstant.ImageStatus.noImage
             } else {
 
                 let carImageView = carImageView
-                carImageView.image = Constant.CarImageStatus.noImage
-                carImageView.tag = Constant.Tag.carImageView
+                carImageView.image = CarImageConstant.ImageStatus.noImage
+                carImageView.tag = CarImageConstant.tag
 
                 containerView.addSubview(carImageView)
                 carImageView.snp.makeConstraints { make in
@@ -213,7 +200,7 @@ final class CarTableViewCell: UITableViewCell {
         urlStrings.enumerated().forEach { (index, urlString) in
 
             let carImageView = carImageView
-            carImageView.image = Constant.CarImageStatus.loading
+            carImageView.image = CarImageConstant.ImageStatus.loading
 
             itemsStackView.addArrangedSubview(carImageView)
             carImageView.snp.makeConstraints { make in
@@ -225,7 +212,7 @@ final class CarTableViewCell: UITableViewCell {
             guard let urlString = urlString,
                   let url = URL(string: urlString) else {
 
-                carImageView.image = Constant.CarImageStatus.noImage
+                carImageView.image = CarImageConstant.ImageStatus.noImage
                 return
             }
 
@@ -247,13 +234,13 @@ final class CarTableViewCell: UITableViewCell {
                                 carImageView.image = UIImage(data: imageData)
                             case .failure:
 
-                                carImageView.image = Constant.CarImageStatus.failed
+                                carImageView.image = CarImageConstant.ImageStatus.failed
                             }
                         }
                     }
                 case .failure:
 
-                    carImageView.image = Constant.CarImageStatus.failed
+                    carImageView.image = CarImageConstant.ImageStatus.failed
                 }
             }
         }
