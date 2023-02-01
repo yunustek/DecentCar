@@ -2,23 +2,23 @@
 A car listing application that allows users to view a list of cars and their details, compare cars and make phone calls to car owners.
 
 ## Features
-* A car list is displayed on the main screen
-* Scroll view to view all car images with page numbering
-* Long press on a car owner's phone number in the table view to make a call through a menu
-* Compare button in the table view trailing swipe action to compare cars
-* Comparison screen to compare car features side by side by swiping to the right on a car
+* You will be greeted with a list of cars on the main screen where you can see the cars
+* You can swipe the pictures of the cars to the right and left to see all the pictures of the cars
+* A menu opened with longPress has been added to call the owners of the cars with a phone
+* You can compare cars, so you can find the best one for you. You can add cars to the comparison list by swiping them to the left
+* On the comparison screen, you can see all the features of as many cars as you want side by side and compare them.
 
 ## Technical details
-* Built using the MVVM architecture
-* Tests are written and can be run using cmd + U
-* View controllers are written without storyboards, and a xib file is created for the table view cell with programmatic layout
-* SnapKit is used for programmatic layout adjustments
-* CocoaPods is the chosen dependency manager
-* The fields for make, model, modelline, color, fuel, seller type and seller city were made into enums
-* The images are cached based on their URLs and will not be downloaded again unless the URL changes. The application will refresh the URLs every time it is opened to update any changing URLs.
+* It was created with the Mvvm architecture
+* Unit tests were written. You can test all the tests with cmd + U
+* ViewControllers were written programmatically without a storyboard.
+* It was created using the SnapKit pod for programmatic layout drawings
+* CocoaPods was chosen as the dependency manager.
+* The fields of make, model, model year, color, fuel, seller type and seller city were converted to enums.
+* URL cache was made for images.
 
 ## Created with
-* Xcode 14
+* Xcode 14.2
 * CocoaPods 1.11.3
 
 ## Figma project: 
