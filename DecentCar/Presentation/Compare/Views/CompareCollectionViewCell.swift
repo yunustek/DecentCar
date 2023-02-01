@@ -13,7 +13,9 @@ final class CompareCollectionViewCell: UICollectionViewCell {
     // MARK: Outlets
 
     @IBOutlet private weak var carImageView: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var propertiesStackView: UIStackView!
 
     // MARK: Variables
 
@@ -31,7 +33,6 @@ final class CompareCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
 
         super.prepareForReuse()
-
     }
 
     private func applyStyling() {
@@ -42,9 +43,21 @@ final class CompareCollectionViewCell: UICollectionViewCell {
 
         self.viewModel = model
 
-        configureLayout()
-
         descriptionLabel.text = model.description
+        priceLabel.text = model.price
+
+        addProperty(key: "Make", value: model.make)
+        addProperty(key: "Model", value: model.model)
+        addProperty(key: "Modelline", value: model.modelline)
+        addProperty(key: "Millage", value: model.mileage)
+        addProperty(key: "Fuel", value: model.fuel)
+        addProperty(key: "Color", value: model.color)
+        addProperty(key: "Seller", value: model.sellerType)
+        addProperty(key: "City", value: model.city)
+
+        let seperatorView = UIView()
+        seperatorView.backgroundColor = .clear
+        propertiesStackView.addArrangedSubview(seperatorView)
 
         // Load Car Images
         loadCarImage(urlString: model.imageUrl,
@@ -53,8 +66,48 @@ final class CompareCollectionViewCell: UICollectionViewCell {
                      forceUpdate: model.forceUpdateImage)
     }
 
-    private func configureLayout() {
+    private func addProperty(key: String, value: String) {
 
+        let keyValueStackView = createKeyValueStackView()
+        let keyLabel = createKeyLabel()
+        keyLabel.text = key
+        let valueLabel = createValueLabel()
+        valueLabel.text = value
+
+        keyValueStackView.addArrangedSubview(keyLabel)
+        keyValueStackView.addArrangedSubview(valueLabel)
+
+        propertiesStackView.addArrangedSubview(keyValueStackView)
+        keyValueStackView.snp.makeConstraints { make in
+            make.height.equalTo(36)
+        }
+    }
+
+    private func createKeyLabel() -> UILabel {
+
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12, weight: .semibold)
+        label.textColor = .label
+        return label
+    }
+
+    private func createValueLabel() -> UILabel {
+
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.textColor = .secondaryLabel
+        return label
+    }
+
+    private func createKeyValueStackView() -> UIStackView {
+
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 2
+
+        return stackView
     }
 
     private func loadCarImage(urlString: String?, imageService: ImageDataService, operation: Operations, forceUpdate: Bool) {
