@@ -1,20 +1,16 @@
 PODS:
-  - Nuke (10.7.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - Nuke (~> 10.7.1)
   - SnapKit (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
-    - Nuke
     - SnapKit
 
 SPEC CHECKSUMS:
-  Nuke: 279f17a599fd1c83cf51de5e0e1f2db143a287b0
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: c4c9b316e1d5eef00381822f2e0f1b9d85a0847f
+PODFILE CHECKSUM: 0d5dffd21dbd1794ae8182a72e3a05f230f66f6c
 
 COCOAPODS: 1.11.3
