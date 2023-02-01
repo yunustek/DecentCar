@@ -58,7 +58,7 @@ final class CarListViewController: UITableViewController, Alertable {
 
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease.circle"), style: .plain, target: self, action: #selector(openFilterPage))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "eyes.inverse"), style: .plain, target: self, action: #selector(tapToCompareButton))
     }
 
     private func setupTableView() {
@@ -76,13 +76,26 @@ final class CarListViewController: UITableViewController, Alertable {
         tableView.allowsSelection = false
     }
 
-    @objc func openFilterPage() {
+    @objc func tapToCompareButton() {
 
+        showComparePage()
     }
 
     @objc func refresh() {
 
         viewModel.refreshCars()
+    }
+
+    private func showComparePage(insertCarId: Int? = nil) {
+
+        let viewModel = CompareViewModel(imageService: self.viewModel.imageService,
+                                         carOperation: self.viewModel.carOperation,
+                                         service: self.viewModel.compareCarService,
+                                         cars: self.viewModel.cars,
+                                         insertCarId: insertCarId)
+        let vc = CompareViewController(viewModel: viewModel)
+
+        show(vc, sender: self)
     }
 }
 
@@ -144,7 +157,6 @@ extension CarListViewController {
     }
 }
 
-
 // MARK: - UITableview Configurations
 
 extension CarListViewController {
@@ -181,14 +193,7 @@ extension CarListViewController {
                 return
             }
 
-            // open compara screen
-            let viewModel = CompareViewModel(imageService: self.viewModel.imageService,
-                                             carOperation: self.viewModel.carOperation,
-                                             service: self.viewModel.compareCarService,
-                                             cars: self.viewModel.cars,
-                                             insertCarId: self.viewModel.cars[indexPath.row].id)
-            let viewController = CompareViewController(viewModel: viewModel)
-            self.show(viewController, sender: self)
+            self.showComparePage(insertCarId: self.viewModel.cars[indexPath.row].id)
             completion(true)
         }
 
