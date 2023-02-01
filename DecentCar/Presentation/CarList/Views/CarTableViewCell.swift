@@ -189,7 +189,7 @@ final class CarTableViewCell: UITableViewCell {
 
                 if pageCount <= 4 {
 
-                    make.centerX.equalToSuperview().offset(-16)
+                    make.centerX.equalToSuperview().offset(-12)
                 } else {
                     make.centerX.equalToSuperview()
                 }

@@ -213,6 +213,6 @@ extension CarListViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        return tableView.bounds.height / 2.5
+        return tableView.bounds.height / 2.6
     }
 }
