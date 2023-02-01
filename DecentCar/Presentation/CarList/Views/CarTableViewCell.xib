@@ -19,18 +19,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2x-o9-G0b">
                         <rect key="frame" x="8" y="8" width="377" height="230"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Fv-VH-pRC">
-                                <rect key="frame" x="0.0" y="1.6666666666666572" width="377" height="227"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="8Fv-VH-pRC" firstAttribute="height" secondItem="E2x-o9-G0b" secondAttribute="height" id="G0T-xP-CHX"/>
-                            <constraint firstItem="8Fv-VH-pRC" firstAttribute="centerY" secondItem="E2x-o9-G0b" secondAttribute="centerY" id="GCM-QI-ACY"/>
-                            <constraint firstItem="8Fv-VH-pRC" firstAttribute="width" secondItem="E2x-o9-G0b" secondAttribute="width" id="Lpp-O5-0hp"/>
-                            <constraint firstItem="8Fv-VH-pRC" firstAttribute="centerX" secondItem="E2x-o9-G0b" secondAttribute="centerX" id="mON-2U-0aQ"/>
-                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="8"/>
@@ -53,14 +42,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="carImageView" destination="8Fv-VH-pRC" id="xxi-xH-wxC"/>
                 <outlet property="containerView" destination="E2x-o9-G0b" id="Mzm-xJ-EbK"/>
             </connections>
             <point key="canvasLocation" x="267.93893129770993" y="111.9718309859155"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="photo.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

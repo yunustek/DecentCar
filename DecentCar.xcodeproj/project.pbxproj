@@ -39,6 +39,9 @@
 		F2CED1F929899ED7008B8C3E /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED1F829899ED7008B8C3E /* Array+Extensions.swift */; };
 		F2CED1FE2989BFA3008B8C3E /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED1FD2989BFA3008B8C3E /* Decimal+Extensions.swift */; };
 		F2CED2032989D2C6008B8C3E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2022989D2C6008B8C3E /* PaddingLabel.swift */; };
+		F2CED2062989DD49008B8C3E /* ScrollingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2052989DD49008B8C3E /* ScrollingPageControl.swift */; };
+		F2CED2082989DD53008B8C3E /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2072989DD53008B8C3E /* CircularView.swift */; };
+		F2CED20A2989DD7F008B8C3E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CED2092989DD7F008B8C3E /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		F2CED1F829899ED7008B8C3E /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		F2CED1FD2989BFA3008B8C3E /* Decimal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extensions.swift"; sourceTree = "<group>"; };
 		F2CED2022989D2C6008B8C3E /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		F2CED2052989DD49008B8C3E /* ScrollingPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingPageControl.swift; sourceTree = "<group>"; };
+		F2CED2072989DD53008B8C3E /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
+		F2CED2092989DD7F008B8C3E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				F2CED1F829899ED7008B8C3E /* Array+Extensions.swift */,
+				F2CED2092989DD7F008B8C3E /* UIView+Extensions.swift */,
 				F2CED1FD2989BFA3008B8C3E /* Decimal+Extensions.swift */,
 			);
 			path = Extension;
@@ -321,6 +328,7 @@
 		F2CED2002989D2B1008B8C3E /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				F2CED2042989DD23008B8C3E /* ScrollingPageControlView */,
 				F2CED2012989D2B8008B8C3E /* Label */,
 			);
 			path = Reusable;
@@ -332,6 +340,15 @@
 				F2CED2022989D2C6008B8C3E /* PaddingLabel.swift */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		F2CED2042989DD23008B8C3E /* ScrollingPageControlView */ = {
+			isa = PBXGroup;
+			children = (
+				F2CED2052989DD49008B8C3E /* ScrollingPageControl.swift */,
+				F2CED2072989DD53008B8C3E /* CircularView.swift */,
+			);
+			path = ScrollingPageControlView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,18 +503,21 @@
 			files = (
 				F2BB5E8A2985641E00352280 /* URLSessionHTTPClient.swift in Sources */,
 				F2BB5EA92986C24200352280 /* CarService.swift in Sources */,
+				F2CED2082989DD53008B8C3E /* CircularView.swift in Sources */,
 				F2BB5E9F2986C07E00352280 /* Image.swift in Sources */,
 				F2BB5E992986BF6600352280 /* CarMapper.swift in Sources */,
 				F2BB5E9E2986C07E00352280 /* Car.swift in Sources */,
 				F2BB5E49298554BC00352280 /* AppDelegate.swift in Sources */,
 				F2BB5E4B298554BC00352280 /* SceneDelegate.swift in Sources */,
 				F2BB5EBF2989284200352280 /* CarListViewModel.swift in Sources */,
+				F2CED2062989DD49008B8C3E /* ScrollingPageControl.swift in Sources */,
 				F2BB5EAB2986C66800352280 /* ImageDataService.swift in Sources */,
 				F2CED1FE2989BFA3008B8C3E /* Decimal+Extensions.swift in Sources */,
 				F2BB5EC2298928A200352280 /* Alertable.swift in Sources */,
 				F2BB5EA02986C07E00352280 /* Seller.swift in Sources */,
 				F2CED1F929899ED7008B8C3E /* Array+Extensions.swift in Sources */,
 				F2BB5E8829855FB400352280 /* Configuration.swift in Sources */,
+				F2CED20A2989DD7F008B8C3E /* UIView+Extensions.swift in Sources */,
 				F2BB5EC7298938C500352280 /* ImageDownloadOperation.swift in Sources */,
 				F2CED2032989D2C6008B8C3E /* PaddingLabel.swift in Sources */,
 				F2BB5ECA298944DA00352280 /* CarTableViewCell.swift in Sources */,

@@ -52,7 +52,7 @@ final class CarListViewController: UITableViewController, Alertable {
 
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(openFilterPage))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease.circle"), style: .plain, target: self, action: #selector(openFilterPage))
     }
 
     private func setupTableView() {
@@ -212,6 +212,7 @@ extension CarListViewController {
 extension CarListViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.width
+
+        return tableView.bounds.height / 2.5
     }
 }
